@@ -7,7 +7,7 @@ URL:		http://liquidsdr.org
 Source:         %{name}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:	automake
-BuildRequires:	fftw-devel
+BuildRequires:	fftw3-devel
 BuildRequires:	libfec-odr-devel
 
 %description
