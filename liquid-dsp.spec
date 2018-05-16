@@ -1,6 +1,6 @@
 Name:           liquid-dsp
 Version:	%{VERSION}
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:	digital signal processing library for software-defined radios
 License:	MIT
 URL:		http://liquidsdr.org
@@ -9,6 +9,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:	automake
 BuildRequires:	fftw3-devel
 BuildRequires:	libfec-odr-devel
+Provides:	libliquid.so()(64bit)
 
 %description
 Software-Defined Radio Digital Signal Processing Library 
@@ -26,7 +27,7 @@ Development files for %{name}.
 
 %build
 ./bootstrap.sh
-./configure --prefix=$RPM_BUILD_ROOT/usr --libdir=/lib64
+CFLAGS="-march=native -O3" ./configure --prefix=$RPM_BUILD_ROOT/usr --libdir=/lib64
 make %{?_smp_mflags}
 
 %check
@@ -52,7 +53,7 @@ ldconfig
 
 %files devel
 %defattr(-,root,root,-)
-%{_includedir}
+%{_includedir}/*
 %{_libdir}/*.a
 
 %changelog
