@@ -1,6 +1,6 @@
 Name:           liquid-dsp
 Version:	%{VERSION}
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:	digital signal processing library for software-defined radios
 License:	MIT
 URL:		http://liquidsdr.org
@@ -9,6 +9,8 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires:	automake
 BuildRequires:	fftw-devel
 BuildRequires:	libfec-odr-devel
+Requires:	fftw
+Requires:	libfec-odr
 Provides:	libliquid.so()(64bit)
 
 %description
