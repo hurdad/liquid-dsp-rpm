@@ -1,6 +1,6 @@
 # liquid-dsp-rpm
 SHELL := /bin/bash 
-version = 1.3.1
+version = 1.3.2
 name = liquid-dsp
 full_name = $(name)-$(version)
 download_url = "https://github.com/jgaeddert/$(name)/archive/v$(version).tar.gz"

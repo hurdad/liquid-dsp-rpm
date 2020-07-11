@@ -1,6 +1,6 @@
 Name:           liquid-dsp
 Version:	%{VERSION}
-Release:        4%{?dist}
+Release:        1%{?dist}
 Summary:	digital signal processing library for software-defined radios
 License:	MIT
 URL:		http://liquidsdr.org
@@ -29,8 +29,7 @@ Development files for %{name}.
 
 %build
 ./bootstrap.sh
-#CFLAGS="-march=native -O3" 
-./configure --prefix=$RPM_BUILD_ROOT/usr --libdir=/lib64
+CFLAGS="-march=native -O3" ./configure --prefix=$RPM_BUILD_ROOT/usr --libdir=/lib64
 make %{?_smp_mflags}
 
 %check
